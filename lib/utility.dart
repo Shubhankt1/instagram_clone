@@ -1,5 +1,70 @@
 import 'package:flutter/material.dart';
+
 import 'package:instagram_clone/theme.dart';
+import 'package:line_icons/line_icon.dart';
+
+List<Map<String, dynamic>> menuItems = [
+  {
+    "name": "Settings",
+    "icon": LineIcon.userCog(
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "Archive",
+    "icon": LineIcon.history(
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "Your activity",
+    "icon": Icon(
+      Icons.history_toggle_off,
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "QR Code",
+    "icon": Icon(
+      Icons.qr_code_scanner_rounded,
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "Saved",
+    "icon": LineIcon.bookmark(
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "Close friends",
+    "icon": LineIcon.alternateListAlt(
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "Discover people",
+    "icon": Icon(
+      Icons.person_add_outlined,
+      color: white,
+      size: 30,
+    )
+  },
+  {
+    "name": "COVID-19 Information Centre",
+    "icon": Icon(
+      Icons.coronavirus_outlined,
+      color: white,
+      size: 30,
+    )
+  },
+];
 
 Container buildProfileIcon(width, height, image) {
   return Container(

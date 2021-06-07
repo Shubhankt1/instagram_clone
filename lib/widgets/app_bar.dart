@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:instagram_clone/theme.dart';
+import 'package:instagram_clone/utility.dart';
 import 'package:instagram_clone/widgets/add_account_modal.dart';
+import 'package:instagram_clone/widgets/profile_menu_modal.dart';
 
 getAppBar(index, context) {
   if (index == 0) {
@@ -67,7 +69,7 @@ getAppBar(index, context) {
                     Text(
                       "heyiamshubhank",
                       style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontWeight: FontWeight.w700,
                           color: white),
                     ),
@@ -91,15 +93,29 @@ getAppBar(index, context) {
           ),
           Row(
             children: [
-              SvgPicture.asset(
-                "assets/images/upload_icon.svg",
-                width: 30,
+              CupertinoButton(
+                padding: const EdgeInsets.only(right: 20),
+                child: SvgPicture.asset(
+                  "assets/images/upload_icon.svg",
+                  width: 26,
+                ),
+                onPressed: () {},
               ),
-              SizedBox(width: 20),
-              SvgPicture.asset(
-                "assets/images/menu.svg",
-                width: 30,
-                color: white,
+              // SizedBox(width: 15),
+              CupertinoButton(
+                padding: const EdgeInsets.only(right: 15),
+                child: SvgPicture.asset(
+                  "assets/images/menu.svg",
+                  width: 26,
+                  color: white,
+                ),
+                onPressed: () {
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) =>
+                        ProfileMenuModal(menuItems: menuItems),
+                  );
+                },
               ),
             ],
           )

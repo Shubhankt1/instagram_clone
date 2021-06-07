@@ -82,20 +82,20 @@ class AddAccountModal extends StatelessWidget {
                     onPressed: () {},
                   ),
                 ),
-                TextButton(
-                  child: Text(
-                    "Add account",
-                    style: TextStyle(
-                        color: buttonFollowColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  onPressed: () {},
-                ),
               ],
             ),
           ),
-          Divider(thickness: 1.0, color: white),
+          Divider(thickness: 0.0, color: white),
+          TextButton(
+            child: Text(
+              "Add account",
+              style: TextStyle(
+                  color: buttonFollowColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+            onPressed: () {},
+          ),
         ],
       ),
     );
