@@ -5,9 +5,11 @@ class ProfileMenuModal extends StatelessWidget {
   const ProfileMenuModal({
     Key? key,
     required this.menuItems,
+    this.title,
   }) : super(key: key);
 
   final List<Map<String, dynamic>> menuItems;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +38,34 @@ class ProfileMenuModal extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
             ),
           ),
+          (title != null)
+              ? Column(
+                  children: [
+                    SizedBox(height: 20),
+                    Text(
+                      title ?? "",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: white,
+                        fontWeight: FontWeight.w700,
+                        decoration: TextDecoration.none,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Divider(color: white.withOpacity(0.3), thickness: 0),
+                  ],
+                )
+              : Container(),
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(0),
               itemCount: menuItems.length,
               itemBuilder: (context, index) => Card(
+                margin: const EdgeInsets.all(2),
                 elevation: 0,
                 color: Colors.transparent,
                 child: ListTile(
+                  // contentPadding: const EdgeInsets.all(0),
                   leading: menuItems[index]["icon"],
                   minLeadingWidth: 30,
                   title: Text(

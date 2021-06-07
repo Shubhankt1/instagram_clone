@@ -26,9 +26,10 @@ getAppBar(index, context) {
                 "assets/images/upload_icon.svg",
                 width: 30,
               ),
-              SizedBox(width: 20),
+              SizedBox(width: 30),
               SvgPicture.asset(
-                "assets/images/message_icon.svg",
+                "assets/images/messenger_icon.svg",
+                color: white,
                 width: 30,
               ),
             ],
@@ -99,7 +100,15 @@ getAppBar(index, context) {
                   "assets/images/upload_icon.svg",
                   width: 26,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) => ProfileMenuModal(
+                      menuItems: menuItems,
+                      title: "Create",
+                    ),
+                  );
+                },
               ),
               // SizedBox(width: 15),
               CupertinoButton(
