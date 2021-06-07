@@ -1,9 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:instagram_clone/theme.dart';
 
-getAppBar(index) {
+import 'package:instagram_clone/theme.dart';
+import 'package:instagram_clone/widgets/add_account_modal.dart';
+
+getAppBar(index, context) {
   if (index == 0) {
     return AppBar(
       backgroundColor: appBarColor,
@@ -77,7 +79,13 @@ getAppBar(index) {
                     ),
                   ],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  print("pressed");
+                  showCupertinoModalPopup(
+                    context: context,
+                    builder: (context) => AddAccountModal(),
+                  );
+                },
               ),
             ],
           ),

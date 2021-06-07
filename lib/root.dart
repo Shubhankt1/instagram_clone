@@ -20,7 +20,7 @@ class _RootState extends State<Root> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(currentIndex),
+      appBar: getAppBar(currentIndex, context),
       body: getBody(currentIndex),
       backgroundColor: Colors.black,
       bottomNavigationBar: getBottomNav(currentIndex, updateTab),
