@@ -15,6 +15,7 @@ class SearchBar extends StatelessWidget {
         backgroundColor: textFieldBackground,
         itemColor: white.withOpacity(0.3),
         padding: const EdgeInsets.all(8),
+        style: TextStyle(color: white),
       ),
     );
   }
