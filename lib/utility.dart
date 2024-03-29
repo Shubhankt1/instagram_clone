@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:instagram_clone/theme.dart';
 import 'package:line_icons/line_icon.dart';
 
+/// Account menu items.
 List<Map<String, dynamic>> menuItems = [
   {
     "name": "Settings",
@@ -66,6 +69,65 @@ List<Map<String, dynamic>> menuItems = [
   },
 ];
 
+/// List of menu items for upload action.
+var uploadMenu = [
+  {
+    "name": "Post",
+    "icon": Icon(
+      Icons.grid_on_outlined,
+      color: white,
+      size: 30,
+    ),
+  },
+  {
+    "name": "Story",
+    "icon": SvgPicture.asset(
+      "assets/images/stories.svg",
+      color: white,
+      width: 30,
+    ),
+  },
+  {
+    "name": "Story highlight",
+    "icon": LineIcon.heartAlt(
+      color: white,
+      size: 30,
+    ),
+  },
+  {
+    "name": "IGTV video",
+    "icon": SvgPicture.asset(
+      "assets/images/instagram-igtv.svg",
+      color: white,
+      width: 30,
+    ),
+  },
+  {
+    "name": "Reel",
+    "icon": SvgPicture.asset(
+      "assets/images/reels_icon.svg",
+      color: white,
+      width: 30,
+    ),
+  },
+  {
+    "name": "Live",
+    "icon": Icon(
+      CupertinoIcons.camera,
+      color: white,
+      size: 30,
+    ),
+  },
+  {
+    "name": "Guide",
+    "icon": Icon(
+      Icons.menu_book,
+      color: white,
+      size: 30,
+    ),
+  }
+];
+
 Container buildProfileIcon(width, height, image) {
   return Container(
     width: width,
@@ -93,7 +155,9 @@ GridView buildGridView(photos) {
         return Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(photos[index]), fit: BoxFit.cover),
+              image: NetworkImage(photos[index]),
+              fit: BoxFit.cover,
+            ),
           ),
         );
       });

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:instagram_clone/constant/post_json.dart';
+
 import 'package:instagram_clone/theme.dart';
 import 'package:instagram_clone/utility.dart';
-
+import 'package:instagram_clone/constant/post_json.dart';
 import 'package:instagram_clone/widgets/profile_info.dart';
 import 'package:instagram_clone/widgets/profile_header.dart';
 import 'package:instagram_clone/widgets/highlights_widget.dart';
@@ -59,7 +59,8 @@ class _AccountScreenState extends State<AccountScreen> {
             Expanded(
               child: TabBarView(
                 children: [
-                  buildGridView(myPosts),
+                  // buildGridView(myPosts),
+                  buildGridView(posts.map((e) => e["postImg"]).toList()),
                   buildGridView(posts.map((e) => e["postImg"]).toList()),
                 ],
               ),

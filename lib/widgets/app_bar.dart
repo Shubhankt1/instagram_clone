@@ -104,7 +104,7 @@ getAppBar(index, context) {
                   showCupertinoModalPopup(
                     context: context,
                     builder: (context) => ProfileMenuModal(
-                      menuItems: menuItems,
+                      menuItems: uploadMenu,
                       title: "Create",
                     ),
                   );
